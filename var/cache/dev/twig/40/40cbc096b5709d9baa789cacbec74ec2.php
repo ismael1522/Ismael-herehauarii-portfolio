@@ -106,7 +106,7 @@ class __TwigTemplate_e3036629dd9a33ebb5c302d33e919cd4 extends Template
     <h1>  Ismael Herehauarii </h1>
 
     This friendly message is coming from:
-    <ul>
+    <ul>bi
         <li>  <code>/Users/herehauismael/ismael_Portfolio/src/Controller/PorfolioController.php</code></li>
         <li>Your template at <code>/Users/herehauismael/ismael_Portfolio/templates/porfolio/index.html.twig</code></li>
     </ul>
@@ -161,7 +161,7 @@ class __TwigTemplate_e3036629dd9a33ebb5c302d33e919cd4 extends Template
     <h1>  Ismael Herehauarii </h1>
 
     This friendly message is coming from:
-    <ul>
+    <ul>bi
         <li>  <code>/Users/herehauismael/ismael_Portfolio/src/Controller/PorfolioController.php</code></li>
         <li>Your template at <code>/Users/herehauismael/ismael_Portfolio/templates/porfolio/index.html.twig</code></li>
     </ul>
