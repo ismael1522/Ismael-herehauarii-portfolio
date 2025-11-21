@@ -31,6 +31,8 @@ class __TwigTemplate_e3036629dd9a33ebb5c302d33e919cd4 extends Template
 
         $this->blocks = [
             'title' => [$this, 'block_title'],
+            'stylesheets' => [$this, 'block_stylesheets'],
+            'header' => [$this, 'block_header'],
             'body' => [$this, 'block_body'],
         ];
     }
@@ -60,7 +62,7 @@ class __TwigTemplate_e3036629dd9a33ebb5c302d33e919cd4 extends Template
 
     }
 
-    // line 3
+    // line 2
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -73,7 +75,7 @@ class __TwigTemplate_e3036629dd9a33ebb5c302d33e919cd4 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        yield "Ismael ismael_Portfolio";
+        yield "Portfolio Étudiant – Ismael Herehauarii";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -83,7 +85,65 @@ class __TwigTemplate_e3036629dd9a33ebb5c302d33e919cd4 extends Template
         yield from [];
     }
 
-    // line 5
+    // line 4
+    /**
+     * @return iterable<null|scalar|\Stringable>
+     */
+    public function block_stylesheets(array $context, array $blocks = []): iterable
+    {
+        $macros = $this->macros;
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
+
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
+
+        // line 5
+        yield "<link rel=\"stylesheet\" href=\"";
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("style.css"), "html", null, true);
+        yield "\">
+";
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+        
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
+
+        yield from [];
+    }
+
+    // line 8
+    /**
+     * @return iterable<null|scalar|\Stringable>
+     */
+    public function block_header(array $context, array $blocks = []): iterable
+    {
+        $macros = $this->macros;
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "header"));
+
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "header"));
+
+        // line 9
+        yield "<header>
+    <div class=\"hero\">
+        <h2>Étudiant en BUT Réseaux Télécommunication</h2>
+        <p>Passionné par l'informatique, je suis à la recherche d’un stage ou d’une alternance.</p>
+        <a href=\"#projects\" class=\"btn\">Voir mes projets</a>
+    </div>
+</header>
+";
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+        
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
+
+        yield from [];
+    }
+
+    // line 18
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -96,21 +156,54 @@ class __TwigTemplate_e3036629dd9a33ebb5c302d33e919cd4 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 6
-        yield "<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+        // line 19
+        yield "
+<section id=\"about\" class=\"section\">
+    <h2>À propos</h2>
+    <p>
+        Je m’appelle <strong>Ismael Herehauarii</strong>, j’ai <strong>19 ans</strong>
+        et je suis actuellement étudiant en <strong>BUT Réseaux Télécommunication</strong>.
+    </p>
+    <p>Je suis motivé, curieux et j’aime apprendre de nouvelles choses.</p>
+</section>
 
-<div class=\"example-wrapper\">
-    <h1>  Ismael Herehauarii </h1>
+<section id=\"skills\" class=\"section\">
+    <h2>Compétences</h2>
+    <div class=\"skills-list\">
+        <span>Compétence 1</span>
+        <span>Compétence 2</span>
+        <span>Compétence 3</span>
+        <span>Compétence 4</span>
+    </div>
+</section>
 
-    This friendly message is coming from:
-    <ul>bi
-        <li>  <code>/Users/herehauismael/ismael_Portfolio/src/Controller/PorfolioController.php</code></li>
-        <li>Your template at <code>/Users/herehauismael/ismael_Portfolio/templates/porfolio/index.html.twig</code></li>
-    </ul>
-</div>
+<section id=\"projects\" class=\"section\">
+    <h2>Projets</h2>
+    <div class=\"projects-container\">
+        <div class=\"project-card\">
+            <h3>Projet 1</h3>
+            <p>Courte description : ce que tu as fait, technologies, objectif.</p>
+        </div>
+        <div class=\"project-card\">
+            <h3>Projet 2</h3>
+            <p>Courte description.</p>
+        </div>
+        <div class=\"project-card\">
+            <h3>Projet 3</h3>
+            <p>Courte description.</p>
+        </div>
+    </div>
+</section>
+
+<section id=\"contact\" class=\"section\">
+    <h2>Contact</h2>
+    <p>
+        Tu peux me contacter au : <strong>06 01 92 15 02</strong><br>
+        Ou par email : <strong>ismaelherehau@gmail.com</strong>
+    </p>
+</section>
+
+
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -142,30 +235,76 @@ class __TwigTemplate_e3036629dd9a33ebb5c302d33e919cd4 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  160 => 19,  147 => 18,  129 => 9,  116 => 8,  102 => 5,  89 => 4,  66 => 2,  43 => 1,);
     }
 
     public function getSourceContext(): Source
     {
         return new Source("{% extends 'base.html.twig' %}
+{% block title %}Portfolio Étudiant – Ismael Herehauarii{% endblock %}
 
-{% block title %}Ismael ismael_Portfolio{% endblock %}
+{% block stylesheets %}
+<link rel=\"stylesheet\" href=\"{{ asset('style.css') }}\">
+{% endblock %}
+
+{% block header %}
+<header>
+    <div class=\"hero\">
+        <h2>Étudiant en BUT Réseaux Télécommunication</h2>
+        <p>Passionné par l'informatique, je suis à la recherche d’un stage ou d’une alternance.</p>
+        <a href=\"#projects\" class=\"btn\">Voir mes projets</a>
+    </div>
+</header>
+{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class=\"example-wrapper\">
-    <h1>  Ismael Herehauarii </h1>
+<section id=\"about\" class=\"section\">
+    <h2>À propos</h2>
+    <p>
+        Je m’appelle <strong>Ismael Herehauarii</strong>, j’ai <strong>19 ans</strong>
+        et je suis actuellement étudiant en <strong>BUT Réseaux Télécommunication</strong>.
+    </p>
+    <p>Je suis motivé, curieux et j’aime apprendre de nouvelles choses.</p>
+</section>
 
-    This friendly message is coming from:
-    <ul>bi
-        <li>  <code>/Users/herehauismael/ismael_Portfolio/src/Controller/PorfolioController.php</code></li>
-        <li>Your template at <code>/Users/herehauismael/ismael_Portfolio/templates/porfolio/index.html.twig</code></li>
-    </ul>
-</div>
+<section id=\"skills\" class=\"section\">
+    <h2>Compétences</h2>
+    <div class=\"skills-list\">
+        <span>Compétence 1</span>
+        <span>Compétence 2</span>
+        <span>Compétence 3</span>
+        <span>Compétence 4</span>
+    </div>
+</section>
+
+<section id=\"projects\" class=\"section\">
+    <h2>Projets</h2>
+    <div class=\"projects-container\">
+        <div class=\"project-card\">
+            <h3>Projet 1</h3>
+            <p>Courte description : ce que tu as fait, technologies, objectif.</p>
+        </div>
+        <div class=\"project-card\">
+            <h3>Projet 2</h3>
+            <p>Courte description.</p>
+        </div>
+        <div class=\"project-card\">
+            <h3>Projet 3</h3>
+            <p>Courte description.</p>
+        </div>
+    </div>
+</section>
+
+<section id=\"contact\" class=\"section\">
+    <h2>Contact</h2>
+    <p>
+        Tu peux me contacter au : <strong>06 01 92 15 02</strong><br>
+        Ou par email : <strong>ismaelherehau@gmail.com</strong>
+    </p>
+</section>
+
+
 {% endblock %}
 ", "porfolio/index.html.twig", "/Users/herehauismael/ismael_Portfolio/templates/porfolio/index.html.twig");
     }

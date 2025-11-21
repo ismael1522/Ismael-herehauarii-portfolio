@@ -34,9 +34,9 @@ class __TwigTemplate_450eac7393e8d8616b2ee8ac9163c0ca extends Template
         $this->blocks = [
             'title' => [$this, 'block_title'],
             'stylesheets' => [$this, 'block_stylesheets'],
-            'javascripts' => [$this, 'block_javascripts'],
-            'importmap' => [$this, 'block_importmap'],
+            'header' => [$this, 'block_header'],
             'body' => [$this, 'block_body'],
+            'javascripts' => [$this, 'block_javascripts'],
         ];
     }
 
@@ -51,30 +51,157 @@ class __TwigTemplate_450eac7393e8d8616b2ee8ac9163c0ca extends Template
 
         // line 1
         yield "<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset=\"UTF-8\">
-        <title>";
-        // line 5
+<html lang=\"fr\">
+<head>
+    <meta charset=\"UTF-8\">
+    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
+    <title>";
+        // line 6
         yield from $this->unwrap()->yieldBlock('title', $context, $blocks);
         yield "</title>
-        <link rel=\"icon\" href=\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>\">
-        ";
-        // line 7
-        yield from $this->unwrap()->yieldBlock('stylesheets', $context, $blocks);
+
+    ";
         // line 9
+        yield "    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: \"Arial\", sans-serif;
+        }
+
+        body {
+            background: #f5f5f5;
+            color: #222;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        header {
+            text-align: center;
+            padding: 100px 20px;
+            background: linear-gradient(135deg, #007bff, #00d4ff);
+            color: white;
+        }
+
+        .btn {
+            display: inline-block;
+            background: white;
+            padding: 10px 20px;
+            color: #007bff;
+            border-radius: 8px;
+            font-weight: bold;
+            margin-top: 20px;
+            text-decoration: none;
+        }
+
+        .section {
+            padding: 60px 40px;
+        }
+
+        .section h2 {
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+
+        .skills-list span {
+            display: inline-block;
+            background: #007bff;
+            color: white;
+            padding: 10px 15px;
+            margin: 8px;
+            border-radius: 6px;
+        }
+
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #222;
+            color: white;
+            margin-top: 40px;
+        }
+    </style>
+
+    ";
+        // line 103
+        yield from $this->unwrap()->yieldBlock('stylesheets', $context, $blocks);
+        // line 104
+        yield "</head>
+
+<body>
+
+    <nav>
+        <h1>Mon Portfolio</h1>
+        <ul>
+            <li><a href=\"";
+        // line 111
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_porfolio");
+        yield "\">Accueil</a></li>
+            <li><a href=\"#skills\">Compétences</a></li>
+            <li><a href=\"#projects\">Projets</a></li>
+            <li><a href=\"#contact\">Contact</a></li>
+        </ul>
+    </nav>
+
+    ";
+        // line 119
+        yield "    ";
+        yield from $this->unwrap()->yieldBlock('header', $context, $blocks);
+        // line 125
         yield "
+    ";
+        // line 127
+        yield "    <main>
         ";
-        // line 10
-        yield from $this->unwrap()->yieldBlock('javascripts', $context, $blocks);
-        // line 13
-        yield "    </head>
-    <body>
-        ";
-        // line 15
+        // line 128
         yield from $this->unwrap()->yieldBlock('body', $context, $blocks);
-        // line 16
-        yield "    </body>
+        // line 129
+        yield "    </main>
+
+    <footer>
+    <p>© 2025 – Ismael Herehauarii     — Mon Portfolio</p>
+
+    </footer>
+
+    ";
+        // line 136
+        yield from $this->unwrap()->yieldBlock('javascripts', $context, $blocks);
+        // line 137
+        yield "</body>
 </html>
 ";
         
@@ -86,7 +213,7 @@ class __TwigTemplate_450eac7393e8d8616b2ee8ac9163c0ca extends Template
         yield from [];
     }
 
-    // line 5
+    // line 6
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -99,7 +226,7 @@ class __TwigTemplate_450eac7393e8d8616b2ee8ac9163c0ca extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        yield "Welcome!";
+        yield "Mon Portfolio";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -109,7 +236,7 @@ class __TwigTemplate_450eac7393e8d8616b2ee8ac9163c0ca extends Template
         yield from [];
     }
 
-    // line 7
+    // line 103
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -122,8 +249,6 @@ class __TwigTemplate_450eac7393e8d8616b2ee8ac9163c0ca extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
 
-        // line 8
-        yield "        ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -133,24 +258,25 @@ class __TwigTemplate_450eac7393e8d8616b2ee8ac9163c0ca extends Template
         yield from [];
     }
 
-    // line 10
+    // line 119
     /**
      * @return iterable<null|scalar|\Stringable>
      */
-    public function block_javascripts(array $context, array $blocks = []): iterable
+    public function block_header(array $context, array $blocks = []): iterable
     {
         $macros = $this->macros;
         $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "header"));
 
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "header"));
 
-        // line 11
-        yield "            ";
-        yield from $this->unwrap()->yieldBlock('importmap', $context, $blocks);
-        // line 12
-        yield "        ";
+        // line 120
+        yield "    <header>
+        <h1>Bienvenue sur mon Portfolio</h1>
+        <a href=\"#projects\" class=\"btn\">Voir mes projets</a>
+    </header>
+    ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -160,30 +286,7 @@ class __TwigTemplate_450eac7393e8d8616b2ee8ac9163c0ca extends Template
         yield from [];
     }
 
-    // line 11
-    /**
-     * @return iterable<null|scalar|\Stringable>
-     */
-    public function block_importmap(array $context, array $blocks = []): iterable
-    {
-        $macros = $this->macros;
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "importmap"));
-
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "importmap"));
-
-        yield $this->env->getRuntime('Symfony\Bridge\Twig\Extension\ImportMapRuntime')->importmap("app");
-        
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
-
-        
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
-
-        yield from [];
-    }
-
-    // line 15
+    // line 128
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -205,6 +308,28 @@ class __TwigTemplate_450eac7393e8d8616b2ee8ac9163c0ca extends Template
         yield from [];
     }
 
+    // line 136
+    /**
+     * @return iterable<null|scalar|\Stringable>
+     */
+    public function block_javascripts(array $context, array $blocks = []): iterable
+    {
+        $macros = $this->macros;
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
+
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
+
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+        
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
+
+        yield from [];
+    }
+
     /**
      * @codeCoverageIgnore
      */
@@ -216,29 +341,158 @@ class __TwigTemplate_450eac7393e8d8616b2ee8ac9163c0ca extends Template
     /**
      * @codeCoverageIgnore
      */
+    public function isTraitable(): bool
+    {
+        return false;
+    }
+
+    /**
+     * @codeCoverageIgnore
+     */
     public function getDebugInfo(): array
     {
-        return array (  187 => 15,  164 => 11,  153 => 12,  150 => 11,  137 => 10,  126 => 8,  113 => 7,  90 => 5,  77 => 16,  75 => 15,  71 => 13,  69 => 10,  66 => 9,  64 => 7,  59 => 5,  53 => 1,);
+        return array (  312 => 136,  290 => 128,  275 => 120,  262 => 119,  240 => 103,  217 => 6,  204 => 137,  202 => 136,  193 => 129,  191 => 128,  188 => 127,  185 => 125,  182 => 119,  172 => 111,  163 => 104,  161 => 103,  65 => 9,  60 => 6,  53 => 1,);
     }
 
     public function getSourceContext(): Source
     {
         return new Source("<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset=\"UTF-8\">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel=\"icon\" href=\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>\">
-        {% block stylesheets %}
-        {% endblock %}
+<html lang=\"fr\">
+<head>
+    <meta charset=\"UTF-8\">
+    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
+    <title>{% block title %}Mon Portfolio{% endblock %}</title>
 
-        {% block javascripts %}
-            {% block importmap %}{{ importmap('app') }}{% endblock %}
-        {% endblock %}
-    </head>
-    <body>
+    {# Feuille de style principale #}
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: \"Arial\", sans-serif;
+        }
+
+        body {
+            background: #f5f5f5;
+            color: #222;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        header {
+            text-align: center;
+            padding: 100px 20px;
+            background: linear-gradient(135deg, #007bff, #00d4ff);
+            color: white;
+        }
+
+        .btn {
+            display: inline-block;
+            background: white;
+            padding: 10px 20px;
+            color: #007bff;
+            border-radius: 8px;
+            font-weight: bold;
+            margin-top: 20px;
+            text-decoration: none;
+        }
+
+        .section {
+            padding: 60px 40px;
+        }
+
+        .section h2 {
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+
+        .skills-list span {
+            display: inline-block;
+            background: #007bff;
+            color: white;
+            padding: 10px 15px;
+            margin: 8px;
+            border-radius: 6px;
+        }
+
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #222;
+            color: white;
+            margin-top: 40px;
+        }
+    </style>
+
+    {% block stylesheets %}{% endblock %}
+</head>
+
+<body>
+
+    <nav>
+        <h1>Mon Portfolio</h1>
+        <ul>
+            <li><a href=\"{{ path('app_porfolio') }}\">Accueil</a></li>
+            <li><a href=\"#skills\">Compétences</a></li>
+            <li><a href=\"#projects\">Projets</a></li>
+            <li><a href=\"#contact\">Contact</a></li>
+        </ul>
+    </nav>
+
+    {# HEADER optionnel #}
+    {% block header %}
+    <header>
+        <h1>Bienvenue sur mon Portfolio</h1>
+        <a href=\"#projects\" class=\"btn\">Voir mes projets</a>
+    </header>
+    {% endblock %}
+
+    {# Contenu principal #}
+    <main>
         {% block body %}{% endblock %}
-    </body>
+    </main>
+
+    <footer>
+    <p>© 2025 – Ismael Herehauarii     — Mon Portfolio</p>
+
+    </footer>
+
+    {% block javascripts %}{% endblock %}
+</body>
 </html>
 ", "base.html.twig", "/Users/herehauismael/ismael_Portfolio/templates/base.html.twig");
     }
