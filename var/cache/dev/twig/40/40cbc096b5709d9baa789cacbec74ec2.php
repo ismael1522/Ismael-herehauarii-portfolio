@@ -170,8 +170,8 @@ class __TwigTemplate_e3036629dd9a33ebb5c302d33e919cd4 extends Template
 <section id=\"skills\" class=\"section\">
     <h2>Compétences</h2>
     <div class=\"skills-list\">
-        <span>Compétence 1</span>
-        <span>Compétence 2</span>
+        <span>Mesurer et analyser les signaux</span>
+        <span>Communiquer avec un tiers(client,collaborateur)</span>
         <span>Compétence 3</span>
         <span>Compétence 4</span>
     </div>
@@ -271,8 +271,8 @@ class __TwigTemplate_e3036629dd9a33ebb5c302d33e919cd4 extends Template
 <section id=\"skills\" class=\"section\">
     <h2>Compétences</h2>
     <div class=\"skills-list\">
-        <span>Compétence 1</span>
-        <span>Compétence 2</span>
+        <span>Mesurer et analyser les signaux</span>
+        <span>Communiquer avec un tiers(client,collaborateur)</span>
         <span>Compétence 3</span>
         <span>Compétence 4</span>
     </div>
