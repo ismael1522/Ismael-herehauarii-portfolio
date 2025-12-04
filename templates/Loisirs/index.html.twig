@@ -1,0 +1,89 @@
+{% extends 'base.html.twig' %}
+{% block title %}Portfolio Étudiant – Ismael Herehauarii{% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('style.css') }}">
+<style>
+  /* Force the three project cards to sit side-by-side on wide screens
+     but stack on small screens for readability */
+  .projects-container {
+    display: flex;
+    gap: 20px;
+    align-items: stretch;
+    /* Try to keep them on one line on desktop */
+    flex-wrap: nowrap;
+  }
+
+  .project-card {
+    flex: 1 1 0;
+    min-width: 0; /* allow shrinking without overflow */
+  }
+
+  /* On small screens, stack the cards vertically */
+  @media (max-width: 800px) {
+    .projects-container {
+      flex-direction: column;
+      flex-wrap: wrap;
+    }
+  }
+</style>
+
+{% endblock %}
+
+{% block header %}
+
+{% endblock %}
+
+{% block body %}
+
+
+
+
+<section id="loisirs" class="section">
+    <h2>Loisirs</h2>
+    <div class="skills-list">
+
+    <!-- From Uiverse.io by vamsidevendrakumar --> 
+<div class="card">
+  <div class="card-inner">
+    <div class="card-front">
+      <p>Athlétisme</p>
+    </div>
+    <div class="card-back">
+      <p>je pratique l'athetism</p>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="card">
+  <div class="card-inner">
+    <div class="card-front">
+      <p>Front Side</p>
+    </div>
+    <div class="card-back">
+      <p>Back Side</p>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="card">
+  <div class="card-inner">
+    <div class="card-front">
+      <p>Front Side</p>
+    </div>
+    <div class="card-back">
+      <p>Back Side</p>
+    </div>
+  </div>
+</div>
+    </div>
+</section>
+
+
+
+{% endblock %}

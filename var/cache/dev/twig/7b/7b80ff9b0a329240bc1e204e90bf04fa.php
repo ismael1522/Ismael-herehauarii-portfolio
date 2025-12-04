@@ -154,12 +154,63 @@ class __TwigTemplate_450eac7393e8d8616b2ee8ac9163c0ca extends Template
             color: white;
             margin-top: 40px;
         }
+        /* From Uiverse.io by vamsidevendrakumar */ 
+.card {
+  width: 300px;
+  height: 200px;
+  perspective: 1000px;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.999s;
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.card-front {
+  background-color: #6A2C70;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  border: 10px solid #6A2C70;
+  border-radius: 10px;
+  justify-content: center;
+  font-size: 24px;
+  transform: rotateY(0deg);
+}
+
+.card-back {
+  background-color: #F08A5D;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  border: 10px solid #F08A5D;
+  border-radius: 10px;
+  justify-content: center;
+  font-size: 24px;
+  transform: rotateY(180deg);
+}
+
     </style>
 
     ";
-        // line 103
+        // line 154
         yield from $this->unwrap()->yieldBlock('stylesheets', $context, $blocks);
-        // line 104
+        // line 155
         yield "</head>
 
 <body>
@@ -168,28 +219,35 @@ class __TwigTemplate_450eac7393e8d8616b2ee8ac9163c0ca extends Template
         <h1>Mon Portfolio</h1>
         <ul>
             <li><a href=\"";
-        // line 111
+        // line 162
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_porfolio");
         yield "\">Accueil</a></li>
-            <li><a href=\"#skills\">Compétences</a></li>
-            <li><a href=\"#projects\">Projets</a></li>
+            <li><a href=\"";
+        // line 163
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_competence");
+        yield "\">Compétences</a></li>
+            <li><a href=\"";
+        // line 164
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_loisirs");
+        yield "\">Loisirs</a></li>
+            <li><a href=\"#cv\">CV</a></li>
             <li><a href=\"#contact\">Contact</a></li>
         </ul>
     </nav>
 
     ";
-        // line 119
+        // line 171
         yield "    ";
         yield from $this->unwrap()->yieldBlock('header', $context, $blocks);
-        // line 125
+        // line 177
         yield "
     ";
-        // line 127
+        // line 179
         yield "    <main>
         ";
-        // line 128
+        // line 180
         yield from $this->unwrap()->yieldBlock('body', $context, $blocks);
-        // line 129
+        // line 181
         yield "    </main>
 
     <footer>
@@ -198,9 +256,9 @@ class __TwigTemplate_450eac7393e8d8616b2ee8ac9163c0ca extends Template
     </footer>
 
     ";
-        // line 136
+        // line 188
         yield from $this->unwrap()->yieldBlock('javascripts', $context, $blocks);
-        // line 137
+        // line 189
         yield "</body>
 </html>
 ";
@@ -236,7 +294,7 @@ class __TwigTemplate_450eac7393e8d8616b2ee8ac9163c0ca extends Template
         yield from [];
     }
 
-    // line 103
+    // line 154
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -258,7 +316,7 @@ class __TwigTemplate_450eac7393e8d8616b2ee8ac9163c0ca extends Template
         yield from [];
     }
 
-    // line 119
+    // line 171
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -271,7 +329,7 @@ class __TwigTemplate_450eac7393e8d8616b2ee8ac9163c0ca extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "header"));
 
-        // line 120
+        // line 172
         yield "    <header>
         <h1>Bienvenue sur mon Portfolio</h1>
         <a href=\"#projects\" class=\"btn\">Voir mes projets</a>
@@ -286,7 +344,7 @@ class __TwigTemplate_450eac7393e8d8616b2ee8ac9163c0ca extends Template
         yield from [];
     }
 
-    // line 128
+    // line 180
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -308,7 +366,7 @@ class __TwigTemplate_450eac7393e8d8616b2ee8ac9163c0ca extends Template
         yield from [];
     }
 
-    // line 136
+    // line 188
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -351,7 +409,7 @@ class __TwigTemplate_450eac7393e8d8616b2ee8ac9163c0ca extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  312 => 136,  290 => 128,  275 => 120,  262 => 119,  240 => 103,  217 => 6,  204 => 137,  202 => 136,  193 => 129,  191 => 128,  188 => 127,  185 => 125,  182 => 119,  172 => 111,  163 => 104,  161 => 103,  65 => 9,  60 => 6,  53 => 1,);
+        return array (  370 => 188,  348 => 180,  333 => 172,  320 => 171,  298 => 154,  275 => 6,  262 => 189,  260 => 188,  251 => 181,  249 => 180,  246 => 179,  243 => 177,  240 => 171,  231 => 164,  227 => 163,  223 => 162,  214 => 155,  212 => 154,  65 => 9,  60 => 6,  53 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -456,6 +514,57 @@ class __TwigTemplate_450eac7393e8d8616b2ee8ac9163c0ca extends Template
             color: white;
             margin-top: 40px;
         }
+        /* From Uiverse.io by vamsidevendrakumar */ 
+.card {
+  width: 300px;
+  height: 200px;
+  perspective: 1000px;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.999s;
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.card-front {
+  background-color: #6A2C70;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  border: 10px solid #6A2C70;
+  border-radius: 10px;
+  justify-content: center;
+  font-size: 24px;
+  transform: rotateY(0deg);
+}
+
+.card-back {
+  background-color: #F08A5D;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  border: 10px solid #F08A5D;
+  border-radius: 10px;
+  justify-content: center;
+  font-size: 24px;
+  transform: rotateY(180deg);
+}
+
     </style>
 
     {% block stylesheets %}{% endblock %}
@@ -467,8 +576,9 @@ class __TwigTemplate_450eac7393e8d8616b2ee8ac9163c0ca extends Template
         <h1>Mon Portfolio</h1>
         <ul>
             <li><a href=\"{{ path('app_porfolio') }}\">Accueil</a></li>
-            <li><a href=\"#skills\">Compétences</a></li>
-            <li><a href=\"#projects\">Projets</a></li>
+            <li><a href=\"{{ path('app_competence') }}\">Compétences</a></li>
+            <li><a href=\"{{ path('app_loisirs')}}\">Loisirs</a></li>
+            <li><a href=\"#cv\">CV</a></li>
             <li><a href=\"#contact\">Contact</a></li>
         </ul>
     </nav>

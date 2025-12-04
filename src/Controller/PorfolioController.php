@@ -15,4 +15,20 @@ final class PorfolioController extends AbstractController
             'controller_name' => 'PorfolioController',
         ]);
     }
+  
+    #[Route('/competence', name: 'app_competence')]
+    public function competence(): Response
+    {
+        return $this->render('competence/index.html.twig', [
+            'controller_name' => 'CompetenceController',
+        ]);
+    }
+
+    #[Route('/Loisirs', name: 'app_loisirs')]
+    public function Loisirs(): Response
+    {
+        return $this->render('Loisirs/index.html.twig', [
+            'controller_name' => 'LoisirsController',
+        ]);
+    }
 }
