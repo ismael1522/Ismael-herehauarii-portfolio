@@ -21,7 +21,9 @@ return [
     'app_porfolio' => [[], ['_controller' => 'App\\Controller\\PorfolioController::index'], [], [['text', '/']], [], [], []],
     'app_competence' => [[], ['_controller' => 'App\\Controller\\PorfolioController::competence'], [], [['text', '/competence']], [], [], []],
     'app_loisirs' => [[], ['_controller' => 'App\\Controller\\PorfolioController::Loisirs'], [], [['text', '/Loisirs']], [], [], []],
+    'app_cv' => [[], ['_controller' => 'App\\Controller\\PorfolioController::cv'], [], [['text', '/cv']], [], [], []],
     'App\Controller\PorfolioController::index' => [[], ['_controller' => 'App\\Controller\\PorfolioController::index'], [], [['text', '/']], [], [], []],
     'App\Controller\PorfolioController::competence' => [[], ['_controller' => 'App\\Controller\\PorfolioController::competence'], [], [['text', '/competence']], [], [], []],
     'App\Controller\PorfolioController::Loisirs' => [[], ['_controller' => 'App\\Controller\\PorfolioController::Loisirs'], [], [['text', '/Loisirs']], [], [], []],
+    'App\Controller\PorfolioController::cv' => [[], ['_controller' => 'App\\Controller\\PorfolioController::cv'], [], [['text', '/cv']], [], [], []],
 ];

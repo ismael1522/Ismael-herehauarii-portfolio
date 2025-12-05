@@ -31,4 +31,12 @@ final class PorfolioController extends AbstractController
             'controller_name' => 'LoisirsController',
         ]);
     }
+
+    #[Route('/cv', name: 'app_cv')]
+    public function cv(): Response
+    {
+        return $this->render('cv/index.html.twig', [
+            'controller_name' => 'cvController',
+        ]);
+    }
 }

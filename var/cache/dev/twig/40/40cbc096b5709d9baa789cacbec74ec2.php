@@ -62,7 +62,7 @@ class __TwigTemplate_e3036629dd9a33ebb5c302d33e919cd4 extends Template
 
     }
 
-    // line 2
+    // line 3
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -85,7 +85,7 @@ class __TwigTemplate_e3036629dd9a33ebb5c302d33e919cd4 extends Template
         yield from [];
     }
 
-    // line 4
+    // line 5
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -98,7 +98,7 @@ class __TwigTemplate_e3036629dd9a33ebb5c302d33e919cd4 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
 
-        // line 5
+        // line 6
         yield "<link rel=\"stylesheet\" href=\"";
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("style.css"), "html", null, true);
         yield "\">
@@ -112,7 +112,7 @@ class __TwigTemplate_e3036629dd9a33ebb5c302d33e919cd4 extends Template
         yield from [];
     }
 
-    // line 8
+    // line 9
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -125,11 +125,11 @@ class __TwigTemplate_e3036629dd9a33ebb5c302d33e919cd4 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "header"));
 
-        // line 9
+        // line 10
         yield "<header>
     <div class=\"hero\">
         <h2>Étudiant en BUT Réseaux Télécommunication</h2>
-        <p>Passionné par l'informatique, je suis à la recherche d’un stage ou d’une alternance.</p>
+        <p>Passionné par l'informatique, je suis à la recherche d'un stage ou d'une alternance.</p>
         <a href=\"#projects\" class=\"btn\">Voir mes projets</a>
     </div>
 </header>
@@ -143,7 +143,7 @@ class __TwigTemplate_e3036629dd9a33ebb5c302d33e919cd4 extends Template
         yield from [];
     }
 
-    // line 18
+    // line 19
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -156,24 +156,23 @@ class __TwigTemplate_e3036629dd9a33ebb5c302d33e919cd4 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 19
-        yield "
-<section id=\"about\" class=\"section\">
+        // line 20
+        yield "<section id=\"about\" class=\"section\">
     <h2>À propos</h2>
     <p>
-        Je m’appelle <strong>Ismael Herehauarii</strong>, j’ai <strong>19 ans</strong>
+        Je m'appelle <strong>Ismael Herehauarii</strong>, j'ai <strong>19 ans</strong>
         et je suis actuellement étudiant en <strong>BUT Réseaux Télécommunication</strong>.
     </p>
-    <p>Je suis motivé, curieux et j’aime apprendre de nouvelles choses.</p>
+    <p>Je suis motivé, curieux et j'aime apprendre de nouvelles choses.</p>
 </section>
 
 <section id=\"skills\" class=\"section\">
     <h2>Compétences</h2>
     <div class=\"skills-list\">
         <span>Mesurer et analyser les signaux</span>
-        <span>Communiquer avec un tiers(client,collaborateur)</span>
-        <span>Compétence 3</span>
-        <span>Compétence 4</span>
+        <span>Communiquer avec un tiers (client, collaborateur)</span>
+        <span>Administration réseau</span>
+        <span>Configuration systèmes</span>
     </div>
 </section>
 
@@ -198,12 +197,10 @@ class __TwigTemplate_e3036629dd9a33ebb5c302d33e919cd4 extends Template
 <section id=\"contact\" class=\"section\">
     <h2>Contact</h2>
     <p>
-        Tu peux me contacter au : <strong>06 01 92 15 02</strong><br>
-        Ou par email : <strong>ismaelherehau@gmail.com</strong>
+        Tu peux me contacter au : <strong><a href=\"tel:+33601921502\">06 01 92 15 02</a></strong><br>
+        Ou par email : <strong><a href=\"mailto:ismaelherehau@gmail.com\">ismaelherehau@gmail.com</a></strong>
     </p>
 </section>
-
-
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -235,12 +232,13 @@ class __TwigTemplate_e3036629dd9a33ebb5c302d33e919cd4 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  160 => 19,  147 => 18,  129 => 9,  116 => 8,  102 => 5,  89 => 4,  66 => 2,  43 => 1,);
+        return array (  160 => 20,  147 => 19,  129 => 10,  116 => 9,  102 => 6,  89 => 5,  66 => 3,  43 => 1,);
     }
 
     public function getSourceContext(): Source
     {
         return new Source("{% extends 'base.html.twig' %}
+
 {% block title %}Portfolio Étudiant – Ismael Herehauarii{% endblock %}
 
 {% block stylesheets %}
@@ -251,30 +249,29 @@ class __TwigTemplate_e3036629dd9a33ebb5c302d33e919cd4 extends Template
 <header>
     <div class=\"hero\">
         <h2>Étudiant en BUT Réseaux Télécommunication</h2>
-        <p>Passionné par l'informatique, je suis à la recherche d’un stage ou d’une alternance.</p>
+        <p>Passionné par l'informatique, je suis à la recherche d'un stage ou d'une alternance.</p>
         <a href=\"#projects\" class=\"btn\">Voir mes projets</a>
     </div>
 </header>
 {% endblock %}
 
 {% block body %}
-
 <section id=\"about\" class=\"section\">
     <h2>À propos</h2>
     <p>
-        Je m’appelle <strong>Ismael Herehauarii</strong>, j’ai <strong>19 ans</strong>
+        Je m'appelle <strong>Ismael Herehauarii</strong>, j'ai <strong>19 ans</strong>
         et je suis actuellement étudiant en <strong>BUT Réseaux Télécommunication</strong>.
     </p>
-    <p>Je suis motivé, curieux et j’aime apprendre de nouvelles choses.</p>
+    <p>Je suis motivé, curieux et j'aime apprendre de nouvelles choses.</p>
 </section>
 
 <section id=\"skills\" class=\"section\">
     <h2>Compétences</h2>
     <div class=\"skills-list\">
         <span>Mesurer et analyser les signaux</span>
-        <span>Communiquer avec un tiers(client,collaborateur)</span>
-        <span>Compétence 3</span>
-        <span>Compétence 4</span>
+        <span>Communiquer avec un tiers (client, collaborateur)</span>
+        <span>Administration réseau</span>
+        <span>Configuration systèmes</span>
     </div>
 </section>
 
@@ -299,13 +296,10 @@ class __TwigTemplate_e3036629dd9a33ebb5c302d33e919cd4 extends Template
 <section id=\"contact\" class=\"section\">
     <h2>Contact</h2>
     <p>
-        Tu peux me contacter au : <strong>06 01 92 15 02</strong><br>
-        Ou par email : <strong>ismaelherehau@gmail.com</strong>
+        Tu peux me contacter au : <strong><a href=\"tel:+33601921502\">06 01 92 15 02</a></strong><br>
+        Ou par email : <strong><a href=\"mailto:ismaelherehau@gmail.com\">ismaelherehau@gmail.com</a></strong>
     </p>
 </section>
-
-
-{% endblock %}
-", "porfolio/index.html.twig", "/Users/herehauismael/ismael_Portfolio/templates/porfolio/index.html.twig");
+{% endblock %}", "porfolio/index.html.twig", "/Users/herehauismael/ismael_Portfolio/templates/porfolio/index.html.twig");
     }
 }

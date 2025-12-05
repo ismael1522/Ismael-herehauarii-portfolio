@@ -103,30 +103,112 @@ class __TwigTemplate_87ef47716be02468ba9634ea6e479b5f extends Template
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("style.css"), "html", null, true);
         yield "\">
 <style>
-  /* Force the three project cards to sit side-by-side on wide screens
-     but stack on small screens for readability */
-  .projects-container {
-    display: flex;
-    gap: 20px;
-    align-items: stretch;
-    /* Try to keep them on one line on desktop */
-    flex-wrap: nowrap;
-  }
+/* Conteneur de la section loisirs */
+.section#loisirs {
+  width: 100%;
+}
 
-  .project-card {
-    flex: 1 1 0;
-    min-width: 0; /* allow shrinking without overflow */
-  }
+/* Liste en flex pour aligner les cartes côte à côte */
+.skills-list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+}
 
-  /* On small screens, stack the cards vertically */
-  @media (max-width: 800px) {
-    .projects-container {
-      flex-direction: column;
-      flex-wrap: wrap;
-    }
+/* Carte agrandie */
+.card {
+  width: 30%; /* 30% pour laisser de l’espace entre les cartes */
+  height: 300px; /* Hauteur augmentée */
+  perspective: 1000px;
+}
+
+/* Intérieur de la carte */
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.999s;
+}
+
+/* Effet flip */
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Faces avant / arrière */
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+/* Face avant */
+.card-front {
+  background-color: #6A2C70;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  border: 10px solid #6A2C70;
+  border-radius: 10px;
+  justify-content: center;
+  font-size: 28px; /* Texte agrandi */
+  transform: rotateY(0deg);
+}
+
+/* Face arrière */
+.card-back {
+  color: #fff;
+  display: flex;
+  align-items: stretch;
+  border: 10px solid #F08A5D;
+  border-radius: 10px;
+  justify-content: center;
+  font-size: 18px; /* Texte agrandi */
+  transform: rotateY(180deg);
+  box-sizing: border-box;
+  padding: 12px;
+}
+
+/* Partie image */
+.card-back .card-image {
+  flex: 1 1 50%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 6px;
+  min-width: 40%;
+}
+
+/* Partie texte */
+.card-back .card-text {
+  flex: 1 1 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  box-sizing: border-box;
+  color: #222;
+  background: rgba(255,255,255,0.92);
+  border-radius: 6px;
+}
+
+/* Responsive mobile */
+@media (max-width: 520px) {
+  .skills-list {
+    flex-direction: column;
+    align-items: center;
   }
+  .card {
+    width: 100%;
+    height: 250px; /* Hauteur adaptée en mobile */
+    margin: 10px 0;
+  }
+}
 </style>
-
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -137,7 +219,7 @@ class __TwigTemplate_87ef47716be02468ba9634ea6e479b5f extends Template
         yield from [];
     }
 
-    // line 33
+    // line 115
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -150,9 +232,6 @@ class __TwigTemplate_87ef47716be02468ba9634ea6e479b5f extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "header"));
 
-        // line 34
-        yield "
-";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -162,7 +241,7 @@ class __TwigTemplate_87ef47716be02468ba9634ea6e479b5f extends Template
         yield from [];
     }
 
-    // line 37
+    // line 118
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -175,58 +254,67 @@ class __TwigTemplate_87ef47716be02468ba9634ea6e479b5f extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 38
-        yield "
+        // line 119
+        yield "<section id=\"loisirs\" class=\"section\">
+  <h2>Loisirs</h2>
+  <div class=\"skills-list\">
 
-
-
-<section id=\"loisirs\" class=\"section\">
-    <h2>Loisirs</h2>
-    <div class=\"skills-list\">
-
-    <!-- From Uiverse.io by vamsidevendrakumar --> 
-<div class=\"card\">
-  <div class=\"card-inner\">
-    <div class=\"card-front\">
-      <p>Athlétisme</p>
+    <!-- Athlétisme -->
+    <div class=\"card\">
+      <div class=\"card-inner\">
+        <div class=\"card-front\">
+          <p>Athlétisme</p>
+        </div>
+        <div class=\"card-back\">
+          <div class=\"card-image\" style=\"background-image: url('";
+        // line 130
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/malleval.jpg"), "html", null, true);
+        yield "');\"></div>
+          <div class=\"card-text\">
+            <p>Je pratique l'athlétisme depuis à peu près 1 an. Cette pratique me permet de me dépenser et de me donner à fond.</p>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class=\"card-back\">
-      <p>je pratique l'athetism</p>
+
+    <!-- Informatique -->
+    <div class=\"card\">
+      <div class=\"card-inner\">
+        <div class=\"card-front\">
+          <p>Informatique</p>
+        </div>
+        <div class=\"card-back\">
+          <div class=\"card-image\" style=\"background-image: url('";
+        // line 145
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/informatique.jpeg"), "html", null, true);
+        yield "');\"></div>
+          <div class=\"card-text\">
+            <p>Passionné par le développement et la résolution de problèmes. L'informatique me passionne et m'aide à être rigoureux.</p>
+          </div>
+        </div>
+      </div>
     </div>
+
+    <!-- Musique -->
+    <div class=\"card\">
+      <div class=\"card-inner\">
+        <div class=\"card-front\">
+          <p>Musique</p>
+        </div>
+        <div class=\"card-back\">
+          <div class=\"card-image\" style=\"background-image: url('";
+        // line 160
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/music.jpg"), "html", null, true);
+        yield "');\"></div>
+          <div class=\"card-text\">
+            <p>La musique m'aide à me concentrer et à me détendre. J'écoute et pratique différents styles selon l'humeur.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
-</div>
-
-
-
-<div class=\"card\">
-  <div class=\"card-inner\">
-    <div class=\"card-front\">
-      <p>Front Side</p>
-    </div>
-    <div class=\"card-back\">
-      <p>Back Side</p>
-    </div>
-  </div>
-</div>
-
-
-
-
-<div class=\"card\">
-  <div class=\"card-inner\">
-    <div class=\"card-front\">
-      <p>Front Side</p>
-    </div>
-    <div class=\"card-back\">
-      <p>Back Side</p>
-    </div>
-  </div>
-</div>
-    </div>
 </section>
-
-
-
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -258,7 +346,7 @@ class __TwigTemplate_87ef47716be02468ba9634ea6e479b5f extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  179 => 38,  166 => 37,  154 => 34,  141 => 33,  102 => 5,  89 => 4,  66 => 2,  43 => 1,);
+        return array (  307 => 160,  289 => 145,  271 => 130,  258 => 119,  245 => 118,  223 => 115,  102 => 5,  89 => 4,  66 => 2,  43 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -269,88 +357,169 @@ class __TwigTemplate_87ef47716be02468ba9634ea6e479b5f extends Template
 {% block stylesheets %}
 <link rel=\"stylesheet\" href=\"{{ asset('style.css') }}\">
 <style>
-  /* Force the three project cards to sit side-by-side on wide screens
-     but stack on small screens for readability */
-  .projects-container {
-    display: flex;
-    gap: 20px;
-    align-items: stretch;
-    /* Try to keep them on one line on desktop */
-    flex-wrap: nowrap;
-  }
+/* Conteneur de la section loisirs */
+.section#loisirs {
+  width: 100%;
+}
 
-  .project-card {
-    flex: 1 1 0;
-    min-width: 0; /* allow shrinking without overflow */
-  }
+/* Liste en flex pour aligner les cartes côte à côte */
+.skills-list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+}
 
-  /* On small screens, stack the cards vertically */
-  @media (max-width: 800px) {
-    .projects-container {
-      flex-direction: column;
-      flex-wrap: wrap;
-    }
+/* Carte agrandie */
+.card {
+  width: 30%; /* 30% pour laisser de l’espace entre les cartes */
+  height: 300px; /* Hauteur augmentée */
+  perspective: 1000px;
+}
+
+/* Intérieur de la carte */
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.999s;
+}
+
+/* Effet flip */
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Faces avant / arrière */
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+/* Face avant */
+.card-front {
+  background-color: #6A2C70;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  border: 10px solid #6A2C70;
+  border-radius: 10px;
+  justify-content: center;
+  font-size: 28px; /* Texte agrandi */
+  transform: rotateY(0deg);
+}
+
+/* Face arrière */
+.card-back {
+  color: #fff;
+  display: flex;
+  align-items: stretch;
+  border: 10px solid #F08A5D;
+  border-radius: 10px;
+  justify-content: center;
+  font-size: 18px; /* Texte agrandi */
+  transform: rotateY(180deg);
+  box-sizing: border-box;
+  padding: 12px;
+}
+
+/* Partie image */
+.card-back .card-image {
+  flex: 1 1 50%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 6px;
+  min-width: 40%;
+}
+
+/* Partie texte */
+.card-back .card-text {
+  flex: 1 1 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  box-sizing: border-box;
+  color: #222;
+  background: rgba(255,255,255,0.92);
+  border-radius: 6px;
+}
+
+/* Responsive mobile */
+@media (max-width: 520px) {
+  .skills-list {
+    flex-direction: column;
+    align-items: center;
   }
+  .card {
+    width: 100%;
+    height: 250px; /* Hauteur adaptée en mobile */
+    margin: 10px 0;
+  }
+}
 </style>
-
 {% endblock %}
 
 {% block header %}
-
 {% endblock %}
 
 {% block body %}
-
-
-
-
 <section id=\"loisirs\" class=\"section\">
-    <h2>Loisirs</h2>
-    <div class=\"skills-list\">
+  <h2>Loisirs</h2>
+  <div class=\"skills-list\">
 
-    <!-- From Uiverse.io by vamsidevendrakumar --> 
-<div class=\"card\">
-  <div class=\"card-inner\">
-    <div class=\"card-front\">
-      <p>Athlétisme</p>
+    <!-- Athlétisme -->
+    <div class=\"card\">
+      <div class=\"card-inner\">
+        <div class=\"card-front\">
+          <p>Athlétisme</p>
+        </div>
+        <div class=\"card-back\">
+          <div class=\"card-image\" style=\"background-image: url('{{ asset('images/malleval.jpg') }}');\"></div>
+          <div class=\"card-text\">
+            <p>Je pratique l'athlétisme depuis à peu près 1 an. Cette pratique me permet de me dépenser et de me donner à fond.</p>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class=\"card-back\">
-      <p>je pratique l'athetism</p>
+
+    <!-- Informatique -->
+    <div class=\"card\">
+      <div class=\"card-inner\">
+        <div class=\"card-front\">
+          <p>Informatique</p>
+        </div>
+        <div class=\"card-back\">
+          <div class=\"card-image\" style=\"background-image: url('{{ asset('images/informatique.jpeg') }}');\"></div>
+          <div class=\"card-text\">
+            <p>Passionné par le développement et la résolution de problèmes. L'informatique me passionne et m'aide à être rigoureux.</p>
+          </div>
+        </div>
+      </div>
     </div>
+
+    <!-- Musique -->
+    <div class=\"card\">
+      <div class=\"card-inner\">
+        <div class=\"card-front\">
+          <p>Musique</p>
+        </div>
+        <div class=\"card-back\">
+          <div class=\"card-image\" style=\"background-image: url('{{ asset('images/music.jpg') }}');\"></div>
+          <div class=\"card-text\">
+            <p>La musique m'aide à me concentrer et à me détendre. J'écoute et pratique différents styles selon l'humeur.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
-</div>
-
-
-
-<div class=\"card\">
-  <div class=\"card-inner\">
-    <div class=\"card-front\">
-      <p>Front Side</p>
-    </div>
-    <div class=\"card-back\">
-      <p>Back Side</p>
-    </div>
-  </div>
-</div>
-
-
-
-
-<div class=\"card\">
-  <div class=\"card-inner\">
-    <div class=\"card-front\">
-      <p>Front Side</p>
-    </div>
-    <div class=\"card-back\">
-      <p>Back Side</p>
-    </div>
-  </div>
-</div>
-    </div>
 </section>
-
-
-
 {% endblock %}
 ", "Loisirs/index.html.twig", "/Users/herehauismael/ismael_Portfolio/templates/Loisirs/index.html.twig");
     }

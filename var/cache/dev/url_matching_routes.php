@@ -18,6 +18,7 @@ return [
         '/' => [[['_route' => 'app_porfolio', '_controller' => 'App\\Controller\\PorfolioController::index'], null, null, null, false, false, null]],
         '/competence' => [[['_route' => 'app_competence', '_controller' => 'App\\Controller\\PorfolioController::competence'], null, null, null, false, false, null]],
         '/Loisirs' => [[['_route' => 'app_loisirs', '_controller' => 'App\\Controller\\PorfolioController::Loisirs'], null, null, null, false, false, null]],
+        '/cv' => [[['_route' => 'app_cv', '_controller' => 'App\\Controller\\PorfolioController::cv'], null, null, null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'

@@ -1,4 +1,5 @@
 {% extends 'base.html.twig' %}
+
 {% block title %}Portfolio Étudiant – Ismael Herehauarii{% endblock %}
 
 {% block stylesheets %}
@@ -9,30 +10,29 @@
 <header>
     <div class="hero">
         <h2>Étudiant en BUT Réseaux Télécommunication</h2>
-        <p>Passionné par l'informatique, je suis à la recherche d’un stage ou d’une alternance.</p>
+        <p>Passionné par l'informatique, je suis à la recherche d'un stage ou d'une alternance.</p>
         <a href="#projects" class="btn">Voir mes projets</a>
     </div>
 </header>
 {% endblock %}
 
 {% block body %}
-
 <section id="about" class="section">
     <h2>À propos</h2>
     <p>
-        Je m’appelle <strong>Ismael Herehauarii</strong>, j’ai <strong>19 ans</strong>
+        Je m'appelle <strong>Ismael Herehauarii</strong>, j'ai <strong>19 ans</strong>
         et je suis actuellement étudiant en <strong>BUT Réseaux Télécommunication</strong>.
     </p>
-    <p>Je suis motivé, curieux et j’aime apprendre de nouvelles choses.</p>
+    <p>Je suis motivé, curieux et j'aime apprendre de nouvelles choses.</p>
 </section>
 
 <section id="skills" class="section">
     <h2>Compétences</h2>
     <div class="skills-list">
         <span>Mesurer et analyser les signaux</span>
-        <span>Communiquer avec un tiers(client,collaborateur)</span>
-        <span>Compétence 3</span>
-        <span>Compétence 4</span>
+        <span>Communiquer avec un tiers (client, collaborateur)</span>
+        <span>Administration réseau</span>
+        <span>Configuration systèmes</span>
     </div>
 </section>
 
@@ -57,10 +57,8 @@
 <section id="contact" class="section">
     <h2>Contact</h2>
     <p>
-        Tu peux me contacter au : <strong>06 01 92 15 02</strong><br>
-        Ou par email : <strong>ismaelherehau@gmail.com</strong>
+        Tu peux me contacter au : <strong><a href="tel:+33601921502">06 01 92 15 02</a></strong><br>
+        Ou par email : <strong><a href="mailto:ismaelherehau@gmail.com">ismaelherehau@gmail.com</a></strong>
     </p>
 </section>
-
-
 {% endblock %}
