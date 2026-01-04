@@ -192,7 +192,7 @@ class __TwigTemplate_450eac7393e8d8616b2ee8ac9163c0ca extends Template
         // line 132
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_porfolio");
         yield "\">
-            Mon Portfolio
+            Mon E-Portfolio
         </a>
 
 
@@ -253,7 +253,7 @@ class __TwigTemplate_450eac7393e8d8616b2ee8ac9163c0ca extends Template
         yield "    </main>
 
     <footer id=\"contact\">
-        <p>© 2025 – Ismael Herehauarii — Mon Portfolio</p>
+        <p>© 2025 – Ismael Herehauarii — Mon E-Portfolio</p>
     </footer>
 
     ";
@@ -331,7 +331,7 @@ class __TwigTemplate_450eac7393e8d8616b2ee8ac9163c0ca extends Template
 
         // line 165
         yield "    <header>
-        <h1>Bienvenue sur mon Portfolio</h1>
+        <h1>Bienvenue sur mon E-Portfolio</h1>
         <a href=\"#projects\" class=\"btn\">Voir mes projets</a>
     </header>
     ";
@@ -546,7 +546,7 @@ class __TwigTemplate_450eac7393e8d8616b2ee8ac9163c0ca extends Template
     <nav class=\"navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top\">
     <div class=\"container\">
         <a class=\"navbar-brand fw-bold\" href=\"{{ path('app_porfolio') }}\">
-            Mon Portfolio
+            Mon E-Portfolio
         </a>
 
 
@@ -579,7 +579,7 @@ class __TwigTemplate_450eac7393e8d8616b2ee8ac9163c0ca extends Template
     {# HEADER optionnel #}
     {% block header %}
     <header>
-        <h1>Bienvenue sur mon Portfolio</h1>
+        <h1>Bienvenue sur mon E-Portfolio</h1>
         <a href=\"#projects\" class=\"btn\">Voir mes projets</a>
     </header>
     {% endblock %}
@@ -590,7 +590,7 @@ class __TwigTemplate_450eac7393e8d8616b2ee8ac9163c0ca extends Template
     </main>
 
     <footer id=\"contact\">
-        <p>© 2025 – Ismael Herehauarii — Mon Portfolio</p>
+        <p>© 2025 – Ismael Herehauarii — Mon E-Portfolio</p>
     </footer>
 
     {% block javascripts %}{% endblock %}
