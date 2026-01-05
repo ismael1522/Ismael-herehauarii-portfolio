@@ -172,7 +172,6 @@ class __TwigTemplate_e3036629dd9a33ebb5c302d33e919cd4 extends Template
         <span>Mesurer et analyser les signaux</span>
         <span>Communiquer avec un tiers (client, collaborateur)</span>
         <span>Administration réseau</span>
-        <span>Configuration systèmes</span>
     </div>
 </section>
 
@@ -181,15 +180,15 @@ class __TwigTemplate_e3036629dd9a33ebb5c302d33e919cd4 extends Template
     <div class=\"projects-container\">
         <div class=\"project-card\">
             <h3>Projet 1</h3>
-            <p>Courte description : ce que tu as fait, technologies, objectif.</p>
+             <p>Audite wifi<p>
         </div>
         <div class=\"project-card\">
             <h3>Projet 2</h3>
-            <p>Courte description.</p>
+            <p>Devis</p>
         </div>
         <div class=\"project-card\">
             <h3>Projet 3</h3>
-            <p>Courte description.</p>
+            <p>Mise en place d'un réseaux</p>
         </div>
     </div>
 </section>
@@ -271,7 +270,6 @@ class __TwigTemplate_e3036629dd9a33ebb5c302d33e919cd4 extends Template
         <span>Mesurer et analyser les signaux</span>
         <span>Communiquer avec un tiers (client, collaborateur)</span>
         <span>Administration réseau</span>
-        <span>Configuration systèmes</span>
     </div>
 </section>
 
@@ -280,15 +278,15 @@ class __TwigTemplate_e3036629dd9a33ebb5c302d33e919cd4 extends Template
     <div class=\"projects-container\">
         <div class=\"project-card\">
             <h3>Projet 1</h3>
-            <p>Courte description : ce que tu as fait, technologies, objectif.</p>
+             <p>Audite wifi<p>
         </div>
         <div class=\"project-card\">
             <h3>Projet 2</h3>
-            <p>Courte description.</p>
+            <p>Devis</p>
         </div>
         <div class=\"project-card\">
             <h3>Projet 3</h3>
-            <p>Courte description.</p>
+            <p>Mise en place d'un réseaux</p>
         </div>
     </div>
 </section>

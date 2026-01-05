@@ -164,7 +164,7 @@ class __TwigTemplate_a67a7fa2c4f6256cec368cb050e1017f extends Template
         <span>Mesurer et analyser les signaux</span>
         <span>Communiquer avec un tiers(client,collaborateur)</span>
         <span>Administration réseaux</span>
-        <span>Configuration systèmes</span>
+        
     </div>
 </section>
 
@@ -249,7 +249,7 @@ class __TwigTemplate_a67a7fa2c4f6256cec368cb050e1017f extends Template
         <span>Mesurer et analyser les signaux</span>
         <span>Communiquer avec un tiers(client,collaborateur)</span>
         <span>Administration réseaux</span>
-        <span>Configuration systèmes</span>
+        
     </div>
 </section>
 
