@@ -71,7 +71,7 @@ class __TwigTemplate_450eac7393e8d8616b2ee8ac9163c0ca extends Template
         }
 
         body {
-            background: #f5f5f5;
+            background: #f3f0f0ff;
             color: #222;
             padding-top: 70px;
         }
@@ -431,7 +431,7 @@ class __TwigTemplate_450eac7393e8d8616b2ee8ac9163c0ca extends Template
         }
 
         body {
-            background: #f5f5f5;
+            background: #f3f0f0ff;
             color: #222;
             padding-top: 70px;
         }

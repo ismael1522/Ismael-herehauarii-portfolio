@@ -181,14 +181,30 @@ class __TwigTemplate_e3036629dd9a33ebb5c302d33e919cd4 extends Template
         <div class=\"project-card\">
             <h3>Projet 1</h3>
              <p>Audite wifi<p>
+             <img src=\"";
+        // line 44
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/Sae 103.png"), "html", null, true);
+        yield "\" alt=\"AirCheck G2\" style=\"width:100%; height:auto;\">
         </div>
         <div class=\"project-card\">
             <h3>Projet 2</h3>
             <p>Devis</p>
+            <img src=\"";
+        // line 49
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/Devis.png"), "html", null, true);
+        yield "\" alt=\"Devis\" style=\"width:100%; height:auto;\">
+            <img src=\"";
+        // line 50
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/103.png"), "html", null, true);
+        yield "\" alt=\"Devis2\" style=\"width:100%; height:auto;\">
         </div>
         <div class=\"project-card\">
             <h3>Projet 3</h3>
             <p>Mise en place d'un réseaux</p>
+            <img src=\"";
+        // line 55
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/Sae 102.png"), "html", null, true);
+        yield "\" alt=\"SAe102\" style=\"width:100%; height:auto;\">
         </div>
     </div>
 </section>
@@ -231,7 +247,7 @@ class __TwigTemplate_e3036629dd9a33ebb5c302d33e919cd4 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  160 => 20,  147 => 19,  129 => 10,  116 => 9,  102 => 6,  89 => 5,  66 => 3,  43 => 1,);
+        return array (  206 => 55,  198 => 50,  194 => 49,  186 => 44,  160 => 20,  147 => 19,  129 => 10,  116 => 9,  102 => 6,  89 => 5,  66 => 3,  43 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -279,14 +295,18 @@ class __TwigTemplate_e3036629dd9a33ebb5c302d33e919cd4 extends Template
         <div class=\"project-card\">
             <h3>Projet 1</h3>
              <p>Audite wifi<p>
+             <img src=\"{{ asset('images/Sae 103.png') }}\" alt=\"AirCheck G2\" style=\"width:100%; height:auto;\">
         </div>
         <div class=\"project-card\">
             <h3>Projet 2</h3>
             <p>Devis</p>
+            <img src=\"{{ asset('images/Devis.png') }}\" alt=\"Devis\" style=\"width:100%; height:auto;\">
+            <img src=\"{{ asset('images/103.png') }}\" alt=\"Devis2\" style=\"width:100%; height:auto;\">
         </div>
         <div class=\"project-card\">
             <h3>Projet 3</h3>
             <p>Mise en place d'un réseaux</p>
+            <img src=\"{{ asset('images/Sae 102.png') }}\" alt=\"SAe102\" style=\"width:100%; height:auto;\">
         </div>
     </div>
 </section>
