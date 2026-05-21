@@ -1,50 +1,435 @@
 {% extends 'base.html.twig' %}
-{% block title %}Portfolio Étudiant – Ismael Herehauarii{% endblock %}
+
+{% block title %}Portfolio Étudiant — Ismael Herehauarii{% endblock %}
 
 {% block stylesheets %}
 <link rel="stylesheet" href="{{ asset('style.css') }}">
+<style>
+  .competences-page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+  .competences-page h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #1a1a2e;
+  }
+  .competences-page .subtitle {
+    color: #555;
+    margin-bottom: 3rem;
+    font-size: 1rem;
+  }
+  .ac-card {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+    margin-bottom: 2.5rem;
+    overflow: hidden;
+    border: 1px solid #e8e8f0;
+  }
+  .ac-card-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.4rem 1.8rem;
+    border-bottom: 1px solid #e8e8f0;
+  }
+  .ac-badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+  .badge-connecter   { background: #e0f2fe; color: #0369a1; }
+  .badge-administrer { background: #d1fae5; color: #065f46; }
+  .badge-programmer  { background: #ede9fe; color: #5b21b6; }
+  .ac-card-header h2 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin: 0;
+  }
+  .ac-card-header p {
+    font-size: 0.85rem;
+    color: #666;
+    margin: 0.2rem 0 0;
+  }
+  .tabs {
+    display: flex;
+    border-bottom: 1px solid #e8e8f0;
+    background: #f9f9fb;
+  }
+  .tab-btn {
+    padding: 0.75rem 1.4rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #888;
+    border: none;
+    background: none;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .tab-btn.active {
+    color: #2563eb;
+    border-bottom-color: #2563eb;
+    background: #fff;
+  }
+  .tab-btn:hover:not(.active) { color: #444; }
+  .tab-content {
+    display: none;
+    padding: 1.6rem 1.8rem;
+    animation: fadeIn 0.25s ease;
+  }
+  .tab-content.active { display: block; }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(4px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .tab-content h3 {
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #2563eb;
+    margin: 0 0 0.6rem;
+  }
+  .tab-content p, .tab-content li {
+    font-size: 0.95rem;
+    color: #333;
+    line-height: 1.7;
+  }
+  .tab-content ul {
+    padding-left: 1.3rem;
+    margin: 0.3rem 0 1rem;
+  }
+  .tab-content ul li { margin-bottom: 0.3rem; }
+  .reflexive-block {
+    background: #f0f4ff;
+    border-left: 4px solid #2563eb;
+    border-radius: 0 8px 8px 0;
+    padding: 1rem 1.2rem;
+    margin-top: 1rem;
+  }
+  .reflexive-block p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #1e3a8a;
+    line-height: 1.7;
+  }
+  .problem-block {
+    background: #fff7ed;
+    border-left: 4px solid #f59e0b;
+    border-radius: 0 8px 8px 0;
+    padding: 1rem 1.2rem;
+    margin-top: 1rem;
+  }
+  .problem-block p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #92400e;
+    line-height: 1.7;
+  }
+  .improve-block {
+    background: #f0fdf4;
+    border-left: 4px solid #22c55e;
+    border-radius: 0 8px 8px 0;
+    padding: 1rem 1.2rem;
+    margin-top: 1rem;
+  }
+  .improve-block p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #14532d;
+    line-height: 1.7;
+  }
+  .section-divider {
+    margin: 1.2rem 0 0.8rem;
+    border: none;
+    border-top: 1px solid #e8e8f0;
+  }
+  .proof-gallery { margin-top: 1.2rem; }
+  .proof-gallery h3 {
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #2563eb;
+    margin: 0 0 0.8rem;
+  }
+  .proof-images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+  }
+  .proof-images a {
+    display: block;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #e8e8f0;
+    transition: box-shadow 0.2s;
+    flex: 1 1 200px;
+    max-width: 280px;
+  }
+  .proof-images a:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.15); }
+  .proof-images img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    display: block;
+  }
+  .proof-caption {
+    font-size: 0.78rem;
+    color: #666;
+    padding: 0.4rem 0.6rem;
+    background: #f9f9fb;
+    text-align: center;
+  }
+</style>
 {% endblock %}
 
 {% block header %}
 <header>
-    <div class="hero">
-        <a href="#projects" class="btn">Voir mes projets</a>
-    </div>
+  <div class="hero">
+    <a href="#competences" class="btn">Voir mes compétences</a>
+  </div>
 </header>
 {% endblock %}
 
 {% block body %}
+<div class="competences-page">
+  <h1 id="competences">Mes Compétences</h1>
+  <p class="subtitle">Apprentissages critiques et analyses réflexives — BUT Réseaux &amp; Télécommunications</p>
 
-
-
-<section id="skills" class="section">
-    <h2>Compétences</h2>
-    <div class="skills-list">
-        <span>Mesurer et analyser les signaux</span>
-        <span>Communiquer avec un tiers(client,collaborateur)</span>
-        <span>Administration réseaux</span>
-        
+  <!-- AC11.05 — CONNECTER -->
+  <div class="ac-card">
+    <div class="ac-card-header">
+      <div>
+        <span class="ac-badge badge-connecter">Connecter</span>
+        <h2>AC11.05 — Identifier les dysfonctionnements du réseau local</h2>
+        <p>SAE 2.01 · Déploiement d'une architecture réseau multi-sites</p>
+      </div>
     </div>
-</section>
-
-<section id="projects" class="section">
-    <h2>Projets</h2>
-    <div class="projects-container">
-        <div class="project-card">
-            <h3>Projet 1</h3>
-            <p>Dans le cadre de la ressource R1.03, j’ai travaillé sur la compétence AC12.01 – Mesurer et analyser les signaux à travers des activités pratiques portant sur les réseaux WiFi et filaires. Ce projet m’a permis de mesurer et analyser les signaux d’un point d’accès WiFi à l’aide de l’outil AirCheck G2, en étudiant des indicateurs tels que la force du signal, le niveau du signal en dBm, le niveau de bruit et le rapport signal sur bruit (SNR). J’ai ainsi compris que la grandeur physique exprimée en dBm correspond à la puissance du signal radio reçue par un appareil. En parallèle, j’ai réalisé des mesures sur des câbles RJ45 en cuivre à l’aide d’un testeur FLUKE Networks, ce qui m’a permis de vérifier l’état des liaisons et de mesurer la longueur des câbles de la salle G007. Les résultats obtenus ont été synthétisés dans des tableaux de mesures, permettant une analyse claire et structurée. Ce travail, réalisé en groupe, m’a demandé rigueur, sérieux et capacité d’adaptation afin de contribuer efficacement à l’avancement du projet.</p>
-        </div>
-        <div class="project-card">
-            <h3>Projet 2</h3>
-            <p>Dans le cadre de la SAE 1.03 sur le déploiement des supports de transmission, j’ai développé la compétence « Communiquer avec un tiers (client, collaborateur) » en travaillant avec mes camarades et en répondant aux attentes de nos professeurs, qui jouaient le rôle de clients. La SAE nous demandait de sélectionner et justifier le matériel nécessaire au projet (goulottes, câbles F/UTP catégorie 6, prises RJ45, blocs bureau, etc.) en respectant le cahier des charges et en préparant un devis complet. Nous avons réparti les tâches : certaines personnes recherchaient le matériel recommandé sur le site LEGRAND, tandis que d’autres organisaient les informations dans un tableau (prix HT, références, quantité, total TTC). J’ai participé activement à la vérification des données et à la présentation de nos choix matériels aux professeurs, en expliquant clairement nos justifications et en répondant à leurs interrogations. Cette expérience m’a permis de développer ma capacité à transmettre des informations techniques de manière claire et structurée, à écouter et intégrer les retours d’un client, et à travailler efficacement en groupe, tout en respectant la confiance qu’ils nous ont accordée en nous fournissant du matériel professionnel de qualité.</p>
-        </div>
-        <div class="project-card">
-            <h3>Projet 3</h3>
-            <p>Dans le cadre de la SAE 1.02 portant sur l’infrastructure réseau d’une entreprise en évolution, j’ai développé la compétence « Administration réseaux » en participant à l’analyse, la configuration et la gestion d’un réseau local complet. Le projet consistait à récupérer les configurations des switches existants à l’aide de TFTPD64, analyser les trames fournies par le professeur pour identifier les VLAN, ports et adresses IP, puis reproduire et étendre le réseau à l’aide de maquettes et de simulations. J’ai configuré des switches, des routeurs et des postes clients (Windows et Ubuntu), mis en place des VLAN, des ports trunk, et des accès sécurisés via SSH. J’ai ensuite testé la connectivité entre les différents équipements grâce à des pings et des tests inter-VLAN pour vérifier la cohérence et le bon fonctionnement du réseau. Cette expérience m’a permis de renforcer ma capacité à administrer un réseau local, à utiliser des outils professionnels pour récupérer et interpréter des configurations, et à assurer la continuité et la sécurité de l’infrastructure tout en respectant les bonnes pratiques de documentation et de gestion des équipements.</p>
-        </div>
+    <div class="tabs">
+      <button class="tab-btn active" onclick="switchTab(this, 'c1-contexte')">Contexte</button>
+      <button class="tab-btn" onclick="switchTab(this, 'c1-connaissances')">Connaissances</button>
+      <button class="tab-btn" onclick="switchTab(this, 'c1-taches')">Tâches &amp; Résultats</button>
+      <button class="tab-btn" onclick="switchTab(this, 'c1-reflexion')">Analyse réflexive</button>
     </div>
-</section>
+    <div id="c1-contexte" class="tab-content active">
+      <h3>Contexte</h3>
+      <p>Dans le cadre de la SAE 2.01, j'ai conçu et déployé l'architecture réseau d'une université multi-sites (Carnot, Métare, Roanne, Tréfilerie) sur Cisco Packet Tracer, incluant la gestion des VLANs, le routage, le NAT et les ACL.</p>
+    </div>
+    <div id="c1-connaissances" class="tab-content">
+      <h3>Connaissances mobilisées</h3>
+      <ul>
+        <li>Identification et résolution des problèmes de connectivité inter-VLAN</li>
+        <li>Diagnostic via les tables de routage (<code>show ip route</code>)</li>
+        <li>Détection des boucles réseau et fonctionnement du protocole STP/RSTP</li>
+        <li>Utilisation des pings et tests de connectivité pour valider le réseau</li>
+        <li>Vérification du bon fonctionnement du NAT et des ACL</li>
+        <li>Utilisation de Python (module <code>ipaddress</code>) pour détecter les conflits d'adresses IP</li>
+      </ul>
+      <hr class="section-divider">
+      <h3>Savoir-être</h3>
+      <p>Rigueur dans l'analyse et la validation de chaque étape avant de passer à la suivante. Méthodologie appliquée pour isoler et corriger les dysfonctionnements.</p>
+    </div>
+    <div id="c1-taches" class="tab-content">
+      <h3>Tâches réalisées &amp; Résultats</h3>
+      <p>Déploiement complet d'un réseau multi-sites avec VLANs, routage dynamique RIPv2, NAT et ACL. Validation par tests de ping inter-sites et inter-VLANs — tous réussis.</p>
+      <hr class="section-divider">
+      <h3>Problème rencontré &amp; Solution</h3>
+      <div class="problem-block">
+        <p>Lors de la configuration du routage dynamique RIPv2, les routeurs FAI ne communiquaient pas entre eux. Après vérification, j'ai constaté que des adresses IP identiques avaient été attribuées sur plusieurs interfaces de routeurs distincts, créant un conflit d'adressage. J'ai résolu le problème en attribuant des adresses IP uniques sur chaque interface en respectant le plan d'adressage VLSM.</p>
+      </div>
+      <hr class="section-divider">
+      <h3>Point à améliorer</h3>
+      <div class="improve-block">
+        <p>Approfondir la configuration des ACL étendues pour un contrôle plus fin des accès entre VLANs.</p>
+      </div>
+      <hr class="section-divider">
+      <div class="proof-gallery">
+        <h3>Preuves</h3>
+        <div class="proof-images">
+          <a href="{{ asset('images2/c1-preuve1.png') }}" target="_blank">
+            <img src="{{ asset('images2/c1-preuve1.png') }}" alt="Plan d'adressage VLSM">
+            <div class="proof-caption">Plan d'adressage VLSM — VLANs par LAN</div>
+          </a>
+          <a href="{{ asset('images2/c1-preuve2.png') }}" target="_blank">
+            <img src="{{ asset('images2/c1-preuve2.png') }}" alt="Adressage routeurs FAI">
+            <div class="proof-caption">Adressage interfaces — Routeurs FAI 1 à 4</div>
+          </a>
+          <a href="{{ asset('images2/c1-preuve3.png') }}" target="_blank">
+            <img src="{{ asset('images2/c1-preuve3.png') }}" alt="Architecture Packet Tracer multi-sites">
+            <div class="proof-caption">Architecture réseau — Packet Tracer multi-sites</div>
+          </a>
+          <a href="{{ asset('images2/c1-preuve4.png') }}" target="_blank">
+            <img src="{{ asset('images2/c1-preuve4.png') }}" alt="Routeurs Cisco physiques">
+            <div class="proof-caption">Routeurs Cisco — câblage physique en salle</div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div id="c1-reflexion" class="tab-content">
+      <h3>Analyse réflexive</h3>
+      <div class="reflexive-block">
+        <p>Cette SAE m'a permis de comprendre concrètement ce que signifie diagnostiquer un réseau en situation réelle. Avant ce projet, je savais théoriquement que les conflits d'adresses IP pouvaient causer des problèmes de routage, mais c'est en les rencontrant sur Packet Tracer que j'ai vraiment assimilé la rigueur nécessaire dans la mise en place d'un plan d'adressage. La méthodologie que j'ai adoptée — tester, observer, isoler la cause, corriger — est une approche que je compte systématiser. Ce qui m'a le plus appris, c'est l'importance de valider chaque étape avant de passer à la suivante : une erreur non détectée tôt peut bloquer tout un réseau.</p>
+      </div>
+    </div>
+  </div>
 
+  <!-- AC12.01 — ADMINISTRER -->
+  <div class="ac-card">
+    <div class="ac-card-header">
+      <div>
+        <span class="ac-badge badge-administrer">Administrer</span>
+        <h2>AC12.01 — Mesurer et analyser les signaux</h2>
+        <p>Ressource R1.03 · Mesures Wi-Fi et câbles cuivre RJ45</p>
+      </div>
+    </div>
+    <div class="tabs">
+      <button class="tab-btn active" onclick="switchTab(this, 'c2-contexte')">Contexte</button>
+      <button class="tab-btn" onclick="switchTab(this, 'c2-connaissances')">Connaissances</button>
+      <button class="tab-btn" onclick="switchTab(this, 'c2-taches')">Tâches &amp; Résultats</button>
+      <button class="tab-btn" onclick="switchTab(this, 'c2-reflexion')">Analyse réflexive</button>
+    </div>
+    <div id="c2-contexte" class="tab-content active">
+      <h3>Contexte</h3>
+      <p>Cette ressource nous a appris à mesurer et analyser les signaux d'un point d'accès Wi-Fi, ainsi qu'à vérifier différentes caractéristiques d'un câble RJ45 (cuivre) à l'aide d'équipements professionnels.</p>
+    </div>
+    <div id="c2-connaissances" class="tab-content">
+      <h3>Connaissances mobilisées</h3>
+      <ul>
+        <li>Utilisation du <strong>AirCheck G2</strong> pour les mesures Wi-Fi</li>
+        <li>Utilisation du <strong>FLUKE Networks</strong> pour mesurer la longueur des câbles en salle G007</li>
+        <li>Compréhension de la grandeur physique dBm (puissance reçue par un appareil Wi-Fi)</li>
+        <li>Lecture et interprétation des paramètres : force du signal, niveau du signal, niveau de bruit (dB) et SNR</li>
+      </ul>
+      <hr class="section-divider">
+      <h3>Savoir-être</h3>
+      <p>Sérieux et application dans les manipulations, capacité à m'adapter au travail en groupe et à faire avancer l'équipe.</p>
+    </div>
+    <div id="c2-taches" class="tab-content">
+      <h3>Tâches réalisées &amp; Résultats</h3>
+      <p>Réalisation d'un tableau récapitulatif des mesures Wi-Fi (force du signal en barres, niveau en dBm, niveau sonore en dB, SNR). Réalisation d'un tableau de tests câbles cuivre avec les longueurs mesurées via le FLUKE Networks.</p>
+      <hr class="section-divider">
+      <h3>Problème rencontré &amp; Solution</h3>
+      <div class="problem-block">
+        <p>Au début, l'interprétation des différentes mesures Wi-Fi n'était pas évidente, notamment la différence entre le niveau du signal et le niveau de bruit. En comparant les valeurs du tableau avec les explications du cours, j'ai progressivement réussi à distinguer ces deux grandeurs et à comprendre leur impact sur la qualité de la connexion.</p>
+      </div>
+      <hr class="section-divider">
+      <h3>Point à améliorer</h3>
+      <div class="improve-block">
+        <p>Je dois encore améliorer ma capacité à analyser rapidement les valeurs mesurées et à en tirer des conclusions techniques précises.</p>
+      </div>
+      <hr class="section-divider">
+      <div class="proof-gallery">
+        <h3>Preuves</h3>
+        <div class="proof-images">
+          <a href="{{ asset('images2/c2-preuve1.png') }}" target="_blank">
+            <img src="{{ asset('images2/c2-preuve1.png') }}" alt="AirCheck G2 — points d'accès Wi-Fi">
+            <div class="proof-caption">AirCheck G2 — scan des points d'accès</div>
+          </a>
+          <a href="{{ asset('images2/c2-preuve2.png') }}" target="_blank">
+            <img src="{{ asset('images2/c2-preuve2.png') }}" alt="Tableau de mesure Wi-Fi">
+            <div class="proof-caption">Tableau de mesure Wi-Fi (SNR, dBm, canaux)</div>
+          </a>
+          <a href="{{ asset('images2/c2-preuve3.png') }}" target="_blank">
+            <img src="{{ asset('images2/c2-preuve3.png') }}" alt="FLUKE Networks — test câbles RJ45">
+            <div class="proof-caption">FLUKE Networks — test câbles salle G007</div>
+          </a>
+          <a href="{{ asset('images2/c2-preuve4.png') }}" target="_blank">
+            <img src="{{ asset('images2/c2-preuve4.png') }}" alt="Résultats mesures câblage">
+            <div class="proof-caption">Résultats câblage — qualifié / disqualifié</div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div id="c2-reflexion" class="tab-content">
+      <h3>Analyse réflexive</h3>
+      <div class="reflexive-block">
+        <p>Cette ressource m'a ouvert les yeux sur la réalité physique des réseaux sans fil. Avant, je pensais qu'un réseau Wi-Fi fonctionnait ou ne fonctionnait pas, sans vraiment comprendre ce qui influençait sa qualité. Manipuler le AirCheck G2 et observer les variations de dBm selon les positions dans la salle m'a montré à quel point l'environnement physique impacte les performances. La difficulté à distinguer le niveau du signal du niveau de bruit m'a appris qu'il ne faut pas se contenter de regarder une seule valeur, mais bien analyser l'ensemble des paramètres — notamment le SNR qui donne une vision globale de la qualité du signal. C'est une approche globale que je veux développer dans mes futurs projets réseau.</p>
+      </div>
+    </div>
+  </div>
 
+  <!-- AC13.01 — PROGRAMMER -->
+  <div class="ac-card">
+    <div class="ac-card-header">
+      <div>
+        <span class="ac-badge badge-programmer">Programmer</span>
+        <h2>AC13.01 — Utiliser un système informatique et ses outils</h2>
+        <p>SAE Portfolio · Création d'un e-portfolio professionnel</p>
+      </div>
+    </div>
+    <div class="tabs">
+      <button class="tab-btn active" onclick="switchTab(this, 'c3-contexte')">Contexte</button>
+      <button class="tab-btn" onclick="switchTab(this, 'c3-connaissances')">Connaissances</button>
+      <button class="tab-btn" onclick="switchTab(this, 'c3-taches')">Tâches &amp; Résultats</button>
+      <button class="tab-btn" onclick="switchTab(this, 'c3-reflexion')">Analyse réflexive</button>
+    </div>
+    <div id="c3-contexte" class="tab-content active">
+      <h3>Contexte</h3>
+      <p>Dans le cadre de cette SAE, j'ai dû créer une présence en ligne afin de me présenter de manière professionnelle. L'objectif était de concevoir un support numérique (site web / portfolio) permettant de mettre en valeur mon profil, mes compétences et mes projets.</p>
+    </div>
+    <div id="c3-connaissances" class="tab-content">
+      <h3>Connaissances mobilisées</h3>
+      <ul>
+        <li>Bases du développement web (HTML, CSS)</li>
+        <li>Utilisation d'outils numériques (éditeur de code, navigateur, terminal)</li>
+        <li>Structuration d'un site internet avec un framework (Symfony / Twig)</li>
+        <li>Notions d'ergonomie et de design web</li>
+        <li>Gestion de fichiers et organisation du travail</li>
+      </ul>
+      <hr class="section-divider">
+      <h3>Savoir-être</h3>
+      <ul>
+        <li>Autonomie dans le travail</li>
+        <li>Rigueur et organisation</li>
+        <li>Créativité dans la présentation</li>
+        <li>Capacité à rechercher des solutions</li>
+        <li>Persévérance face aux difficultés techniques</li>
+      </ul>
+    </div>
+    <div id="c3-taches" class="tab-content">
+      <h3>Tâches réalisées &amp; Résultats</h3>
+      <p>J'ai réalisé un portfolio en ligne présentant mon profil, mes compétences et mes projets. Le site contient plusieurs sections (présentation, compétences, projets, contact). Le résultat est un support clair et structuré, accessible depuis un navigateur web.</p>
+      <hr class="section-divider">
+      <div class="proof-gallery">
+        <h3>Preuves</h3>
+        <div class="proof-images">
+          <a href="{{ asset('images2/c3-preuve1.png') }}" target="_blank">
+            <img src="{{ asset('images2/c3-preuve1.png') }}" alt="Page d'accueil du portfolio">
+            <div class="proof-caption">Page d'accueil — portfolio en ligne</div>
+          </a>
+          <a href="{{ asset('images2/c3-preuve2.png') }}" target="_blank">
+            <img src="{{ asset('images2/c3-preuve2.png') }}" alt="Code source VS Code — Symfony">
+            <div class="proof-caption">Code source — VS Code / Symfony</div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div id="c3-reflexion" class="tab-content">
+      <h3>Analyse réflexive</h3>
+      <div class="reflexive-block">
+        <p>Concevoir ce portfolio m'a confronté à une réalité que je n'avais pas anticipée : passer du cours théorique sur HTML/CSS à la création d'un vrai site fonctionnel demande bien plus que de la syntaxe. J'ai dû organiser mon travail, faire des choix de design, résoudre des problèmes d'affichage et m'adapter à un framework (Symfony) que je découvrais. Ce projet m'a appris à être autonome face à un problème technique : chercher dans la documentation, tester, recommencer. Il m'a aussi montré l'importance de la structure dans le code — un fichier mal organisé devient vite ingérable. Aujourd'hui, je me sens capable de créer un site web de A à Z, et c'est une compétence que je pourrai valoriser dans mon parcours professionnel.</p>
+      </div>
+    </div>
+  </div>
 
+</div>
+
+<script>
+function switchTab(btn, targetId) {
+  var card = btn.closest('.ac-card');
+  card.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
+  card.querySelectorAll('.tab-content').forEach(function(c) { c.classList.remove('active'); });
+  btn.classList.add('active');
+  document.getElementById(targetId).classList.add('active');
+}
+</script>
 {% endblock %}
